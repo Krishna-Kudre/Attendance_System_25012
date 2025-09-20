@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+</head>
+<body>
+    <h2>Add Student</h2>
+    <form id="studentForm">
+        Roll Number: <input type="text" id="roll_number" required><br>
+        Name: <input type="text" id="name" required><br>
+        <button type="submit">Add Student</button>
+    </form>
+    <p id="message"></p>
+
+    <script>
+        const form = document.getElementById("studentForm");
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const roll_number = document.getElementById("roll_number").value;
+            const name = document.getElementById("name").value;
+
+            const formData = new FormData();
+            formData.append("roll_number", roll_number);
+            formData.append("name", name);
+
+            const response = await fetch("/add_student", {
+                method: "POST",
+                body: formData
+            });
+            const text = await response.text();
+            document.getElementById("message").innerText = text;
+            form.reset();
+        });
+    </script>
+</body>
+</html>
