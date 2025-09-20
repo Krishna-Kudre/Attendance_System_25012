@@ -1,0 +1,83 @@
+/* Reset some basic elements */
+body {
+margin: 0;
+padding: 0;
+font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+background-color: #f7f9fc;
+color: #333;
+}
+
+/* Container styling */
+.container {
+max-width: 600px;
+margin: 40px auto;
+padding: 30px;
+background-color: white;
+box-shadow: 0 0 15px rgba(0,0,0,0.1);
+border-radius: 8px;
+}
+
+/* Header */
+h1, h2 {
+text-align: center;
+color: #2c3e50;
+}
+
+/* Links & buttons */
+a, button {
+display: block;
+text-align: center;
+margin: 12px auto;
+padding: 10px 20px;
+background-color: #3498db;
+color: white;
+border: none;
+border-radius: 6px;
+text-decoration: none;
+font-size: 16px;
+cursor: pointer;
+}
+
+a:hover, button:hover {
+background-color: #2980b9;
+}
+
+/* Forms */
+form {
+display: flex;
+flex-direction: column;
+gap: 12px;
+margin-top: 20px;
+}
+
+input {
+padding: 10px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+
+#message {
+margin-top: 20px;
+text-align: center;
+font-weight: bold;
+color: green;
+}
+
+/* QR Scanner box */
+#reader {
+margin: 0 auto;
+max-width: 400px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+.container {
+margin: 20px;
+padding: 20px;
+}
+
+button, a {
+width: 100%;
+}
+}
