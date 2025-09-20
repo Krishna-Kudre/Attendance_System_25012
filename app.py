@@ -99,6 +99,10 @@ def mark_attendance(roll_number, name):
             print(f"Attendance marked for {name}")
     conn.close()
 
+@app.route('/scan_attendance_page')
+def scan_page():
+    return render_template("scan_attendance.html")
+
 # --------------------- REPORT ---------------------
 def view_report():
     conn = sqlite3.connect("attendance.db")
@@ -140,3 +144,4 @@ def main_menu():
 
 if __name__ == "__main__":
     main_menu()
+
